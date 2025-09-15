@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Apache Spark Optimization Techniques — Blog</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css"/>
+  <style>
+    .blog-article { max-width: 900px; margin: 40px auto; padding: 28px; background: linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01)); border-radius: 12px; }
+    .blog-article h1 { color: #06202b; margin-bottom: 24px; }
+    .blog-article pre { background: #f3f7f9; padding: 12px; border-radius: 8px; overflow: auto; margin: 16px 0; }
+    .blog-article p { margin: 16px 0; line-height: 1.6; }
+    .blog-article h2 { margin: 32px 0 16px; color: #06202b; }
+    .site-header { background: rgba(255, 255, 255, 0.95); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; padding: 16px 0; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+    .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 24px; }
+    .header-nav a { color: #06202b; text-decoration: none; margin-left: 24px; font-weight: 500; transition: color 0.3s; }
+    .header-nav a:hover { color: #0066cc; }
+    main { margin-top: 80px; }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-brand">
+        <a href="index.html" style="text-decoration: none; color: #06202b;">
+          <span style="font-weight: 600;">Mayuresh Khanaj</span>
+        </a>
+      </div>
+      <nav class="header-nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#contact">Contact</a>
+        <a href="index.html#blog">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="blog-article">
+      <h1>Apache Spark Optimization Techniques for Data Engineers</h1>
+      <p>As data volumes grow, optimizing Spark jobs becomes crucial for maintaining performance and cost efficiency. Here are some key techniques I've successfully implemented in production environments.</p>
+
+      <h2>1. Partition Optimization</h2>
+      <p>One of the most impactful optimizations is proper partitioning:</p>
+      <pre><code>// Before optimization
+df.groupBy("customer_id").agg(sum("amount"))
+
+// After optimization - with partition tuning
+df.repartition(numPartitions, "customer_id")
+  .groupBy("customer_id")
+  .agg(sum("amount"))
+  .coalesce(outputPartitions)</code></pre>
+
+      <h2>2. Caching Strategy</h2>
+      <p>Strategic caching can dramatically improve performance for repeatedly accessed data:</p>
+      <pre><code>// Cache frequently accessed DataFrame
+df.cache()
+
+// Or with storage level specification
+df.persist(StorageLevel.MEMORY_AND_DISK)</code></pre>
+
+      <h2>3. Broadcasting Small Tables</h2>
+      <p>Broadcasting small tables in joins can significantly reduce shuffle operations:</p>
+      <pre><code>// Broadcast hint for small tables
+import org.apache.spark.sql.functions.broadcast
+val joinedDF = largeDF.join(broadcast(smallDF), "join_key")</code></pre>
+
+      <h2>The Results</h2>
+      <p>Implementing these optimizations led to:</p>
+      <ul>
+        <li>30-40% reduction in processing time</li>
+        <li>50% decrease in cluster resource utilization</li>
+        <li>Significant cost savings in cloud environments</li>
+      </ul>
+
+      <h2>Conclusion</h2>
+      <p>Spark optimization is an ongoing process. Monitor, measure, and iterate on these techniques based on your specific use case.</p>
+    </article>
+  </main>
+</body>
+</html>

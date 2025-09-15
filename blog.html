@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Mayuresh Khanaj</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="nav-brand">
+                <span class="brand-text">MK</span>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#experience">Experience</a>
+                <a href="index.html#projects">Projects</a>
+                <a href="blog.html" class="active">Blog</a>
+                <a href="index.html#contact">Contact</a>
+            </div>
+            <button class="nav-mobile-toggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Blog Hero -->
+        <section class="blog-hero">
+            <div class="container">
+                <div class="blog-hero-content">
+                    <h1>Technical Blog</h1>
+                    <p>Deep dives into software engineering, data systems, and performance optimization</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Blog Posts -->
+        <section class="blog-posts-section">
+            <div class="container">
+                <div class="posts-grid">
+                    <!-- UNION vs UNION ALL Article -->
+                    <article class="post-card">
+                        <a href="union_vs_union_all.html" class="post-image">
+                            <img src="assets/union_tutorial.jpg" alt="UNION vs UNION ALL in SQL">
+                            <div class="post-overlay">
+                                <div class="post-logo"></div>
+                            </div>
+                        </a>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <div class="post-meta-left">
+                                    <span class="post-category">SQL</span>
+                                    <span class="post-read-time">5 min read</span>
+                                </div>
+                                <span class="post-date">September 15, 2025</span>
+                            </div>
+                            <h2 class="post-title">
+                                <a href="union_vs_union_all.html">UNION vs UNION ALL: Understanding the Performance Trade-offs</a>
+                            </h2>
+                            <p class="post-excerpt">
+                                Deep dive into the performance implications of UNION vs UNION ALL in SQL, with practical examples and best practices for different database engines.
+                            </p>
+                            <div class="post-footer">
+                                <div class="post-tags">
+                                    <span class="tag"><i class="fas fa-tag"></i> SQL</span>
+                                    <span class="tag"><i class="fas fa-tag"></i> Performance</span>
+                                </div>
+                                <a href="union_vs_union_all.html" class="read-more">Read More →</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Spark Article -->
+                    <article class="post-card">
+                        <a href="spark_optimization.html" class="post-image">
+                            <img src="assets/sparkoptimization.png" alt="Apache Spark Optimization">
+                            <div class="post-overlay">
+                                <div class="post-logo">
+                                    <img src="assets/spark-logo.png" alt="Apache Spark Logo" class="tech-logo">
+                                </div>
+                            </div>
+                        </a>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <div class="post-meta-left">
+                                    <span class="post-category">Performance</span>
+                                    <span class="post-read-time">
+                                        <i class="far fa-clock"></i>
+                                        10 min read
+                                    </span>
+                                </div>
+                                <span class="post-date">September 14, 2025</span>
+                            </div>
+                            <h2 class="post-title">
+                                <a href="spark_optimization.html">Apache Spark Optimization Techniques</a>
+                            </h2>
+                            <p class="post-excerpt">
+                                Learn about practical strategies for optimizing Spark jobs in production environments. 
+                                From partitioning strategies to memory tuning, discover how to boost your Spark performance.
+                            </p>
+                            <div class="post-footer">
+                                <div class="post-tags">
+                                    <span class="tag">
+                                        <i class="fas fa-bolt"></i>
+                                        Apache Spark
+                                    </span>
+                                    <span class="tag">
+                                        <i class="fas fa-database"></i>
+                                        Big Data
+                                    </span>
+                                    <span class="tag">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        Performance
+                                    </span>
+                                </div>
+                                <a href="spark_optimization.html" class="read-more">
+                                    Read Article
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- PostgreSQL Article -->
+                    <article class="post-card">
+                        <a href="postgres_trgm.html" class="post-image">
+                            <img src="assets/pg_trgm_index.jpg" alt="PostgreSQL TRGM">
+                            <div class="post-overlay">
+                                <div class="post-logo">
+                                    <img src="assets/postgres-logo.png" alt="PostgreSQL Logo" class="tech-logo">
+                                </div>
+                            </div>
+                        </a>
+                        <div class="post-content">
+                            <div class="post-meta">
+                                <div class="post-meta-left">
+                                    <span class="post-category">Databases</span>
+                                    <span class="post-read-time">
+                                        <i class="far fa-clock"></i>
+                                        8 min read
+                                    </span>
+                                </div>
+                                <span class="post-date">September 14, 2025</span>
+                            </div>
+                            <h2 class="post-title">
+                                <a href="postgres_trgm.html">PostgreSQL TRGM Indexes</a>
+                            </h2>
+                            <p class="post-excerpt">
+                                Deep dive into using trigram indexes for efficient text search in PostgreSQL. 
+                                Learn how to implement fuzzy search and improve query performance.
+                            </p>
+                            <div class="post-footer">
+                                <div class="post-tags">
+                                    <span class="tag">
+                                        <i class="fas fa-database"></i>
+                                        PostgreSQL
+                                    </span>
+                                    <span class="tag">
+                                        <i class="fas fa-search"></i>
+                                        Indexing
+                                    </span>
+                                    <span class="tag">
+                                        <i class="fas fa-tachometer-alt"></i>
+                                        Performance
+                                    </span>
+                                </div>
+                                <a href="postgres_trgm.html" class="read-more">
+                                    Read Article
+                                    <i class="fas fa-arrow-right"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-info">
+                    <p>&copy; 2025 Mayuresh Khanaj. All rights reserved.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" class="social-link"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link"><i class="fas fa-envelope"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>

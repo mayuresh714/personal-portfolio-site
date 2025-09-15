@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>The Beauty of SQL — Blog</title>
+<link rel="stylesheet" href="styles.css"/>
+<style>
+  .blog-article{max-width:900px;margin:40px auto;padding:28px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));border-radius:12px}
+  .blog-article h1{color:#06202b}
+  .blog-article pre{background:#f3f7f9;padding:12px;border-radius:8px;overflow:auto}
+</style>
+</head>
+<body>
+  <div class="bg-overlay"></div>
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">Mayuresh Khanaj</div>
+      <nav class="nav">
+        <a href="index.html">Home</a>
+        <a href="index.html#skills">Skills</a>
+        <a href="index.html#projects">Projects</a>
+        <a href="index.html#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="blog-article">
+      <h1>🌟 The Beauty of SQL: Unlocking the Language of Data</h1>
+      <p>When we think about the most powerful technologies shaping our world today, databases silently stand at the core. From financial transactions and e-commerce websites to social media feeds and healthcare systems, data is everywhere. And the language that gives us the power to interact with this ocean of information is <strong>SQL — Structured Query Language</strong>.</p>
+
+      <h2>Why SQL is Beautiful</h2>
+
+      <h3>1. Simplicity with Power</h3>
+      <p>SQL looks deceptively simple. Commands like <code>SELECT</code>, <code>INSERT</code>, and <code>UPDATE</code> feel like plain English. Yet, behind that simplicity lies the power to query millions (or even billions) of rows in seconds.</p>
+
+      <h3>2. Universal Language of Data</h3>
+      <p>Whether you’re working with MySQL, PostgreSQL, Oracle, Redshift, or SQLite — SQL is the common thread. It’s the <em>Esperanto of data</em>. Learn it once, and you can carry it across platforms, industries, and roles.</p>
+
+      <h3>3. Declarative Elegance</h3>
+      <p>Unlike traditional programming where you must spell out every step, SQL lets you declare <strong>what</strong> you want, not <strong>how</strong> to get it. This declarative nature is elegant — it leaves the optimization to the database engine while you focus on the logic.</p>
+
+      <h3>4. Perfect Balance of Logic and Art</h3>
+      <p>Writing a truly elegant SQL query feels like solving a puzzle. You reduce complexity, minimize joins, and suddenly the query reads like poetry.</p>
+
+      <h2>Everyday Beauty in Action</h2>
+      <p><strong>Filtering insights:</strong></p>
+      <pre><code>SELECT name, revenue
+FROM companies
+WHERE revenue &gt; 1000000
+ORDER BY revenue DESC;</code></pre>
+
+      <p><strong>Joining worlds together:</strong></p>
+      <pre><code>SELECT o.order_id, c.customer_name, o.amount
+FROM orders o
+JOIN customers c ON o.customer_id = c.id;</code></pre>
+
+      <h2>The Takeaway</h2>
+      <p>SQL is not just a tool for database professionals. It’s a <strong>universal skill</strong> — one that empowers analysts, engineers, product managers, and entrepreneurs alike. Its beauty lies in its clarity, universality, and ability to turn data into knowledge.</p>
+
+      <p>✨ <em>SQL isn’t just code. It’s the bridge between raw numbers and meaningful insight.</em></p>
+    </article>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>© 2025 Mayuresh Khanaj — Crafted with ♥ in Pune</p>
+    </div>
+  </footer>
+</body>
+</html>
