@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mayuresh Khanaj • Software Engineer</title>
-  <meta name="description" content="Software Engineer at TraceLink specializing in backend development, data engineering, and distributed systems. Open to new opportunities.">
+  <title>Mayuresh Khanaj • Backend & Data Engineer (SDE-2)</title>
+  <meta name="description" content="Mayuresh Khanaj — Software Development Engineer II at TraceLink. Backend, distributed systems and data engineering in Java, RxJava, Spark and PostgreSQL. Open to Senior / SDE-2 roles.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=SF+Pro+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="styles.css" />
 </head>
@@ -22,23 +22,24 @@
         <a href="#home" class="active">Home</a>
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
+        <a href="#work">Case Studies</a>
+        <a href="#skills">Skills</a>
         <a href="blog.html">Blog</a>
-        <a href="#contact">Contact</a>
+        <a href="assets/Mayuresh_Khanaj_Resume.pdf" class="nav-cta" target="_blank">Resume</a>
       </div>
-      <button class="nav-mobile-toggle">
+      <button class="nav-mobile-toggle" aria-label="Toggle navigation">
         <i class="fas fa-bars"></i>
       </button>
     </div>
   </nav>
 
-  <!-- Psychological Loading Experience -->
+  <!-- Loading Experience -->
   <div class="meta-loader" id="meta-loader">
     <div class="loader-content">
       <div class="meta-logo">
         <div class="logo-animation"></div>
       </div>
-      <div class="loading-text">Crafting Excellence...</div>
+      <div class="loading-text">Loading portfolio…</div>
       <div class="loading-progress">
         <div class="progress-bar"></div>
       </div>
@@ -46,157 +47,165 @@
   </div>
 
   <main>
-    <!-- Hero Section -->
+    <!-- Hero -->
     <section class="meta-hero" id="home">
       <div class="hero-container">
         <div class="hero-content">
           <div class="hero-badge">
-            <span class="badge-icon">✨</span>
-            <span class="badge-text">SDE-II at TraceLink</span>
+            <span class="badge-icon"></span>
+            <span class="badge-text">Open to Senior / SDE-2 backend &amp; data roles</span>
           </div>
-          
+
           <div class="hero-headline">
             <h1 class="main-title">
-              <span class="title-line">Hi, I'm</span>
+              <span class="title-line small">Hi, I'm</span>
               <span class="title-line name-highlight">Mayuresh Khanaj</span>
-              <span class="title-line">Software Engineer</span>
+              <span class="title-line title-role">Backend &amp; Data Engineer</span>
             </h1>
-            
-            <div class="hero-subtitle">
-              I build scalable backend systems and data pipelines at <strong>TraceLink</strong>. 
-              Passionate about distributed systems, performance optimization, and clean architecture.
+
+            <p class="hero-subtitle">
+              I design and ship <strong>scalable backend systems and data pipelines</strong> at
+              <strong>TraceLink</strong>. I care about distributed systems, database internals,
+              and turning slow, fragile services into fast, observable ones.
+            </p>
+          </div>
+
+          <div class="hero-stats" id="hero-stats">
+            <div class="stat-item">
+              <span class="stat-number">3+</span>
+              <div class="stat-label">Years shipping to prod</div>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">30%</span>
+              <div class="stat-label">Report runtime cut</div>
+            </div>
+            <div class="stat-item">
+              <span class="stat-number">1TB+</span>
+              <div class="stat-label">Daily data processed</div>
             </div>
           </div>
-          
-          <div class="hero-stats">
-            <div class="stat-item">
-              <div class="stat-number">2+</div>
-              <div class="stat-label">Years Experience</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">30%</div>
-              <div class="stat-label">Performance Boost</div>
-            </div>
-            <div class="stat-item">
-              <div class="stat-number">15+</div>
-              <div class="stat-label">Projects Delivered</div>
-            </div>
-          </div>
-          
+
           <div class="hero-actions">
             <a href="assets/Mayuresh_Khanaj_Resume.pdf" class="primary-btn" target="_blank">
               <i class="fas fa-download"></i>
               <span>Download Resume</span>
             </a>
             <a href="#contact" class="secondary-btn">
-              <i class="fas fa-envelope"></i>
+              <i class="fas fa-paper-plane"></i>
               <span>Get in Touch</span>
             </a>
           </div>
-          
+
           <div class="hero-tech">
-            <div class="tech-label">Tech Stack:</div>
+            <div class="tech-label">Core stack</div>
             <div class="tech-stack">
               <span class="tech-item">Java</span>
-              <span class="tech-item">Python</span>
               <span class="tech-item">RxJava</span>
-              <span class="tech-item">Spark</span>
-              <span class="tech-item">AWS</span>
+              <span class="tech-item">Python</span>
+              <span class="tech-item">Apache Spark</span>
               <span class="tech-item">PostgreSQL</span>
+              <span class="tech-item">Redshift</span>
+              <span class="tech-item">AWS</span>
             </div>
           </div>
         </div>
-        
+
         <div class="hero-visual">
           <div class="profile-card">
             <div class="profile-image">
               <img src="assets/profile.jpg" alt="Mayuresh Khanaj" class="profile-pic">
-              <div class="status-dot"></div>
+              <div class="status-dot" title="Available"></div>
             </div>
             <div class="profile-info">
               <h3>Mayuresh Khanaj</h3>
-              <p>Software Engineer II</p>
+              <p>Software Development Engineer II</p>
               <div class="profile-location">
                 <i class="fas fa-map-marker-alt"></i>
-                <span>Pune, India</span>
+                <span>Pune, India · Open to relocation</span>
               </div>
+            </div>
+            <div class="profile-links">
+              <a href="https://linkedin.com/in/mayureshkhanaj" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+              <a href="https://github.com/mayureshkhanaj" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+              <a href="https://leetcode.com/mayureshkhanaj" target="_blank" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+              <a href="mailto:mayureshkhanaj@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About Section -->
+    <!-- About -->
     <section id="about" class="section">
       <div class="container">
         <div class="section-header animate-on-scroll">
-          <span class="section-badge">About Me</span>
-          <h2>Building Data-Driven Solutions</h2>
+          <span class="section-badge">About</span>
+          <h2>Engineering that moves the metric</h2>
           <div class="section-line"></div>
         </div>
-        
+
         <div class="about-content">
-          <div class="about-text animate-on-scroll">
-            <div class="about-intro">
-              <p class="lead">I'm a Software Engineer specializing in data engineering and distributed systems at TraceLink. With a focus on building scalable solutions, I transform complex data challenges into efficient, production-ready systems.</p>
+          <div class="about-intro animate-on-scroll">
+            <p class="lead">
+              I'm a backend and data engineer who likes owning a problem end to end — from
+              schema design and query plans to reactive services and the dashboards that prove it
+              worked. I operate at <strong>SDE-2 level</strong>: scoping ambiguous work, making the
+              architecture calls, and leaving systems faster and easier to reason about than I found them.
+            </p>
+          </div>
+
+          <div class="highlights">
+            <div class="highlight-item expandable animate-on-scroll" data-expanded="false">
+              <div class="highlight-header">
+                <i class="fas fa-database"></i>
+                <div class="highlight-title">
+                  <h4>Data engineering at scale</h4>
+                  <p class="highlight-preview">Enterprise ETL and analytics pipelines on Spark, Redshift &amp; Aurora</p>
+                </div>
+                <i class="fas fa-chevron-down expand-icon"></i>
+              </div>
+              <div class="highlight-details">
+                <ul>
+                  <li>Built <strong>Redshift–Aurora integrations</strong> with materialized views to serve analytics without hammering OLTP.</li>
+                  <li>Designed ETL workflows handling <strong>1TB+ of data daily</strong> with partitioning and validation baked in.</li>
+                  <li>Tuned distributed queries and data-quality checks to keep pipelines correct and cheap.</li>
+                </ul>
+              </div>
             </div>
-            
-            <div class="highlights">
-              <div class="highlight-item expandable animate-on-scroll" data-expanded="false">
-                <div class="highlight-header">
-                  <i class="fas fa-database"></i>
-                  <div class="highlight-title">
-                    <h4>Data Engineering Excellence</h4>
-                    <p class="highlight-preview">Built and optimized enterprise-scale data pipelines</p>
-                  </div>
-                  <i class="fas fa-chevron-down expand-icon"></i>
+
+            <div class="highlight-item expandable animate-on-scroll" data-expanded="false">
+              <div class="highlight-header">
+                <i class="fas fa-gauge-high"></i>
+                <div class="highlight-title">
+                  <h4>Performance &amp; reliability</h4>
+                  <p class="highlight-preview">~30% faster report generation via reactive RxJava pipelines</p>
                 </div>
-                <div class="highlight-details">
-                  <p>Led multiple data engineering initiatives at TraceLink:</p>
-                  <ul>
-                    <li>Designed and implemented real-time data processing pipelines using Apache Spark</li>
-                    <li>Optimized PostgreSQL queries resulting in 40% faster data retrieval</li>
-                    <li>Implemented data quality frameworks reducing errors by 75%</li>
-                  </ul>
-                </div>
+                <i class="fas fa-chevron-down expand-icon"></i>
               </div>
-              
-              <div class="highlight-item expandable animate-on-scroll" data-expanded="false">
-                <div class="highlight-header">
-                  <i class="fas fa-rocket"></i>
-                  <div class="highlight-title">
-                    <h4>Performance Optimization</h4>
-                    <p class="highlight-preview">30% performance boost in data processing systems</p>
-                  </div>
-                  <i class="fas fa-chevron-down expand-icon"></i>
-                </div>
-                <div class="highlight-details">
-                  <p>Specialized in optimizing data processing systems:</p>
-                  <ul>
-                    <li>Refactored Spark jobs to reduce processing time by 30%</li>
-                    <li>Implemented intelligent partitioning strategies</li>
-                    <li>Optimized memory usage in large-scale data operations</li>
-                  </ul>
-                </div>
+              <div class="highlight-details">
+                <ul>
+                  <li>Rewrote CSV report generation with <strong>RxJava reactive streams</strong>, cutting runtime by ~30%.</li>
+                  <li>Re-architected RocksDB-based tracking onto a <strong>Postgres-backed</strong> design for durability and queryability.</li>
+                  <li>Improved observability so regressions surface before customers notice them.</li>
+                </ul>
               </div>
-              
-              <div class="highlight-item expandable animate-on-scroll" data-expanded="false">
-                <div class="highlight-header">
-                  <i class="fas fa-code-branch"></i>
-                  <div class="highlight-title">
-                    <h4>System Architecture</h4>
-                    <p class="highlight-preview">Designed scalable data architectures</p>
-                  </div>
-                  <i class="fas fa-chevron-down expand-icon"></i>
+            </div>
+
+            <div class="highlight-item expandable animate-on-scroll" data-expanded="false">
+              <div class="highlight-header">
+                <i class="fas fa-diagram-project"></i>
+                <div class="highlight-title">
+                  <h4>System design &amp; ownership</h4>
+                  <p class="highlight-preview">From ambiguous requirements to production architecture</p>
                 </div>
-                <div class="highlight-details">
-                  <p>Led architectural decisions for data systems:</p>
-                  <ul>
-                    <li>Designed ETL workflows processing 1TB+ daily data</li>
-                    <li>Implemented data lake architecture using AWS services</li>
-                    <li>Created robust data validation frameworks</li>
-                  </ul>
-                </div>
+                <i class="fas fa-chevron-down expand-icon"></i>
+              </div>
+              <div class="highlight-details">
+                <ul>
+                  <li>Own features from design doc to rollout, weighing consistency, throughput and cost trade-offs.</li>
+                  <li>Build reactive <strong>GraphQL APIs</strong> for high-throughput reconciliation workloads.</li>
+                  <li>Mentor on SQL/Spark internals and review for correctness, not just style.</li>
+                </ul>
               </div>
             </div>
           </div>
@@ -204,22 +213,23 @@
       </div>
     </section>
 
-    <!-- Experience Section -->
+    <!-- Experience -->
     <section id="experience" class="section">
       <div class="container">
-        <div class="section-header">
-          <h2>Experience</h2>
-          <p>My Professional Journey</p>
+        <div class="section-header animate-on-scroll">
+          <span class="section-badge">Experience</span>
+          <h2>Where I've shipped</h2>
+          <div class="section-line"></div>
         </div>
 
         <div class="timeline">
-          <div class="timeline-item animate-slide-in">
+          <div class="timeline-item animate-on-scroll">
             <div class="timeline-content">
               <div class="role-header">
                 <h3>Software Development Engineer II</h3>
                 <div class="company-info">
                   <h4>TraceLink</h4>
-                  <span class="timeline-date">Mar 2025 - Present</span>
+                  <span class="timeline-date">Mar 2025 – Present</span>
                   <span class="location">Pune, India</span>
                 </div>
               </div>
@@ -227,28 +237,28 @@
                 <ul>
                   <li class="achievement-item">
                     <span class="achievement-icon">🔄</span>
-                    <p>Designed Redshift-Aurora integrations using materialized views for analytics.</p>
+                    <p>Designed <strong>Redshift–Aurora integrations</strong> using materialized views to power analytics while keeping transactional load low.</p>
                   </li>
                   <li class="achievement-item">
                     <span class="achievement-icon">⚡</span>
-                    <p>Refactored RocksDB-based tracking into a Postgres-backed architecture.</p>
+                    <p>Re-architected RocksDB-based tracking into a <strong>Postgres-backed</strong> design, improving durability, queryability and recovery.</p>
                   </li>
                   <li class="achievement-item">
                     <span class="achievement-icon">📊</span>
-                    <p>Optimized CSV report generation with RxJava, reducing run time by ~30%.</p>
+                    <p>Optimized CSV report generation with <strong>RxJava</strong>, reducing runtime by <strong>~30%</strong>.</p>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="timeline-item animate-slide-in">
+          <div class="timeline-item animate-on-scroll">
             <div class="timeline-content">
               <div class="role-header">
                 <h3>Software Development Engineer I</h3>
                 <div class="company-info">
                   <h4>TraceLink</h4>
-                  <span class="timeline-date">Jul 2023 - Mar 2025</span>
+                  <span class="timeline-date">Jul 2023 – Mar 2025</span>
                   <span class="location">Pune, India</span>
                 </div>
               </div>
@@ -256,37 +266,37 @@
                 <ul>
                   <li class="achievement-item">
                     <span class="achievement-icon">🚀</span>
-                    <p>Implemented backend features using RxJava and improved observability.</p>
+                    <p>Delivered backend features on <strong>RxJava</strong> and improved service observability across the stack.</p>
                   </li>
                   <li class="achievement-item">
                     <span class="achievement-icon">💾</span>
-                    <p>Worked on Redshift query optimization and distributed ETL pipelines.</p>
+                    <p>Worked on <strong>Redshift query optimization</strong> and distributed ETL pipelines feeding analytics.</p>
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="timeline-item animate-slide-in">
+          <div class="timeline-item animate-on-scroll">
             <div class="timeline-content">
               <div class="role-header">
                 <h3>Software Development Intern</h3>
                 <div class="company-info">
                   <h4>TraceLink</h4>
-                  <span class="timeline-date">Jun 2022 - Sep 2022</span>
+                  <span class="timeline-date">Jun 2022 – Sep 2022</span>
                   <span class="location">Pune, India</span>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="timeline-item animate-slide-in">
+          <div class="timeline-item animate-on-scroll">
             <div class="timeline-content">
               <div class="role-header">
                 <h3>Project Intern</h3>
                 <div class="company-info">
                   <h4>AlgoAnalytics</h4>
-                  <span class="timeline-date">Jan 2022 - May 2022</span>
+                  <span class="timeline-date">Jan 2022 – May 2022</span>
                   <span class="location">Pune, India</span>
                 </div>
               </div>
@@ -296,223 +306,248 @@
       </div>
     </section>
 
-    <!-- Education Section -->
-    <section id="education" class="section">
+    <!-- Case Studies -->
+    <section id="work" class="section">
       <div class="container">
-        <div class="section-header">
-          <h2>Education</h2>
-          <p>Academic Background</p>
+        <div class="section-header animate-on-scroll">
+          <span class="section-badge">Case Studies</span>
+          <h2>Problems I've solved</h2>
+          <p>Each one framed the way I'd walk an interviewer through it: the problem, the approach, the trade-offs, and the measurable result.</p>
+          <div class="section-line"></div>
         </div>
 
-        <div class="timeline">
-          <div class="timeline-item animate-slide-in">
-            <div class="timeline-content">
-              <div class="role-header">
-                <h3>Bachelor of Technology - BTech</h3>
-                <div class="company-info">
-                  <h4>Pune Institute of Computer Technology</h4>
-                  <span class="timeline-date">2019 - 2023</span>
-                  <span class="location">Pune, India</span>
-                </div>
-              </div>
-              <div class="achievements">
-                <ul>
-                  <li class="achievement-item">
-                    <span class="achievement-icon">🎓</span>
-                    <p>Computer Science Engineering</p>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="section container skills-section">
-      <div class="section-header animate-on-scroll">
-        <span class="section-badge">Technical Skills</span>
-        <h2>Data Engineering Expertise</h2>
-        <div class="section-line"></div>
-      </div>
-      
-      <div class="skills-container">
-        <div class="skills-categories animate-on-scroll">
-          <div class="skill-category active" data-category="languages">
-            <i class="fas fa-code"></i>
-            <span>Languages</span>
-          </div>
-          <div class="skill-category" data-category="data">
-            <i class="fas fa-database"></i>
-            <span>Data & DB</span>
-          </div>
-          <div class="skill-category" data-category="backend">
-            <i class="fas fa-server"></i>
-            <span>Backend</span>
-          </div>
-          <div class="skill-category" data-category="cloud">
-            <i class="fas fa-cloud"></i>
-            <span>Cloud & DevOps</span>
-          </div>
-          <div class="skill-category" data-category="tools">
-            <i class="fas fa-tools"></i>
-            <span>Tools</span>
-          </div>
-        </div>
-        
-        <div class="skills-content animate-on-scroll">
-          <!-- Keep the existing skill groups with progress bars -->
-          <div class="skill-group active" data-group="languages">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Python</span>
-                <span class="skill-level">Expert</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="90"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">SQL</span>
-                <span class="skill-level">Expert</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="95"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Java</span>
-                <span class="skill-level">Advanced</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="85"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Scala</span>
-                <span class="skill-level">Advanced</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="80"></div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="skill-group" data-group="data">
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Apache Spark</span>
-                <span class="skill-level">Expert</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="90"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">PostgreSQL</span>
-                <span class="skill-level">Expert</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="88"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Redshift</span>
-                <span class="skill-level">Advanced</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="85"></div>
-              </div>
-            </div>
-            <div class="skill-item">
-              <div class="skill-info">
-                <span class="skill-name">Kafka</span>
-                <span class="skill-level">Advanced</span>
-              </div>
-              <div class="skill-bar">
-                <div class="skill-progress" data-progress="82"></div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="section">
-      <div class="container">
-        <div class="section-header">
-          <h2>Featured Projects</h2>
-          <p>Some of my notable work</p>
-        </div>
-        
         <div class="projects-grid">
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Real-time Data Pipeline</h3>
-              <span class="project-type">Data Engineering</span>
-            </div>
-            <p>Built a high-throughput ETL pipeline using Spark and Kafka to process millions of records daily with sub-second latency.</p>
-            <div class="project-tech">
-              <span class="tech-tag">Spark</span>
-              <span class="tech-tag">Kafka</span>
-              <span class="tech-tag">Redshift</span>
-            </div>
-          </div>
-          
-          <div class="project-card">
-            <div class="project-header">
-              <h3>Performance Optimization</h3>
+          <!-- Case 1 -->
+          <div class="case-card animate-on-scroll">
+            <div class="case-head">
+              <h3>Reactive report generation</h3>
               <span class="project-type">Backend</span>
             </div>
-            <p>Optimized critical reporting system using RxJava reactive streams, achieving 30% performance improvement.</p>
+            <div class="case-metric">
+              <span class="m-num">~30%</span>
+              <span class="m-label">faster report runtime</span>
+            </div>
+            <div class="case-body">
+              <div class="case-row">
+                <span class="case-label">Problem</span>
+                <p>Large CSV report generation was slow and blocking, tying up threads and delaying downstream delivery.</p>
+              </div>
+              <div class="case-row">
+                <span class="case-label">Approach</span>
+                <p>Rebuilt the pipeline around RxJava reactive streams — backpressure-aware, non-blocking, and streamed instead of buffered.</p>
+              </div>
+              <div class="case-extra case-body">
+                <div class="case-row">
+                  <span class="case-label">Trade-offs</span>
+                  <p>Reactive code is harder to read and debug, so I invested in clear operator boundaries and metrics to keep it maintainable for the team.</p>
+                </div>
+                <div class="case-row">
+                  <span class="case-label">Impact</span>
+                  <p>~30% runtime reduction and steadier resource usage under load, with report SLAs consistently met.</p>
+                </div>
+              </div>
+            </div>
+            <button class="case-toggle" type="button">More detail <i class="fas fa-chevron-down"></i></button>
             <div class="project-tech">
               <span class="tech-tag">RxJava</span>
               <span class="tech-tag">Java</span>
               <span class="tech-tag">PostgreSQL</span>
             </div>
           </div>
-          
-          <div class="project-card">
-            <div class="project-header">
-              <h3>GraphQL API Suite</h3>
-              <span class="project-type">API Development</span>
+
+          <!-- Case 2 -->
+          <div class="case-card animate-on-scroll">
+            <div class="case-head">
+              <h3>RocksDB → Postgres re-architecture</h3>
+              <span class="project-type">Systems</span>
             </div>
-            <p>Developed reactive GraphQL APIs for serial number reconciliation with high availability and throughput.</p>
+            <div class="case-metric">
+              <span class="m-num">Durable</span>
+              <span class="m-label">&amp; queryable tracking store</span>
+            </div>
+            <div class="case-body">
+              <div class="case-row">
+                <span class="case-label">Problem</span>
+                <p>A RocksDB-backed tracking layer was fast but opaque — hard to query, back up, and reason about during incidents.</p>
+              </div>
+              <div class="case-row">
+                <span class="case-label">Approach</span>
+                <p>Migrated the model to a Postgres-backed architecture with a schema built for the real access patterns and recovery needs.</p>
+              </div>
+              <div class="case-extra case-body">
+                <div class="case-row">
+                  <span class="case-label">Trade-offs</span>
+                  <p>Traded raw embedded-KV speed for durability, ad-hoc queryability and operational simplicity — the right call for this workload.</p>
+                </div>
+                <div class="case-row">
+                  <span class="case-label">Impact</span>
+                  <p>Recovery and debugging became straightforward, and analytics could join directly against tracking data.</p>
+                </div>
+              </div>
+            </div>
+            <button class="case-toggle" type="button">More detail <i class="fas fa-chevron-down"></i></button>
             <div class="project-tech">
-              <span class="tech-tag">GraphQL</span>
-              <span class="tech-tag">RxJava</span>
-              <span class="tech-tag">Spring Boot</span>
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">RocksDB</span>
+              <span class="tech-tag">Java</span>
+            </div>
+          </div>
+
+          <!-- Case 3 -->
+          <div class="case-card animate-on-scroll">
+            <div class="case-head">
+              <h3>Redshift–Aurora analytics bridge</h3>
+              <span class="project-type">Data Eng</span>
+            </div>
+            <div class="case-metric">
+              <span class="m-num">1TB+</span>
+              <span class="m-label">daily, without OLTP strain</span>
+            </div>
+            <div class="case-body">
+              <div class="case-row">
+                <span class="case-label">Problem</span>
+                <p>Analytics queries risked overloading the Aurora OLTP database that also served live traffic.</p>
+              </div>
+              <div class="case-row">
+                <span class="case-label">Approach</span>
+                <p>Designed a Redshift–Aurora integration with materialized views so heavy analytical reads hit the warehouse, not production.</p>
+              </div>
+              <div class="case-extra case-body">
+                <div class="case-row">
+                  <span class="case-label">Trade-offs</span>
+                  <p>Accepted eventual freshness on analytics in exchange for protecting OLTP latency — tuned refresh cadence to the business need.</p>
+                </div>
+                <div class="case-row">
+                  <span class="case-label">Impact</span>
+                  <p>Stable transactional performance alongside rich analytics over 1TB+/day of pipeline data.</p>
+                </div>
+              </div>
+            </div>
+            <button class="case-toggle" type="button">More detail <i class="fas fa-chevron-down"></i></button>
+            <div class="project-tech">
+              <span class="tech-tag">Redshift</span>
+              <span class="tech-tag">Aurora</span>
+              <span class="tech-tag">Spark</span>
+              <span class="tech-tag">SQL</span>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Section -->
+    <!-- Skills -->
+    <section id="skills" class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="section-badge">Skills</span>
+          <h2>Tools I reach for</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="skills-wrap">
+          <div class="skill-block animate-on-scroll">
+            <div class="skill-block-head">
+              <i class="fas fa-code"></i>
+              <h4>Languages</h4>
+            </div>
+            <div class="chip-row">
+              <span class="chip core">Java</span>
+              <span class="chip core">SQL</span>
+              <span class="chip core">Python</span>
+              <span class="chip">Scala</span>
+            </div>
+          </div>
+
+          <div class="skill-block animate-on-scroll">
+            <div class="skill-block-head">
+              <i class="fas fa-database"></i>
+              <h4>Data &amp; Databases</h4>
+            </div>
+            <div class="chip-row">
+              <span class="chip core">PostgreSQL</span>
+              <span class="chip core">Apache Spark</span>
+              <span class="chip">Redshift</span>
+              <span class="chip">Aurora</span>
+              <span class="chip">Kafka</span>
+              <span class="chip">RocksDB</span>
+            </div>
+          </div>
+
+          <div class="skill-block animate-on-scroll">
+            <div class="skill-block-head">
+              <i class="fas fa-server"></i>
+              <h4>Backend &amp; APIs</h4>
+            </div>
+            <div class="chip-row">
+              <span class="chip core">RxJava</span>
+              <span class="chip">Spring Boot</span>
+              <span class="chip">GraphQL</span>
+              <span class="chip">REST</span>
+              <span class="chip">Reactive Streams</span>
+            </div>
+          </div>
+
+          <div class="skill-block animate-on-scroll">
+            <div class="skill-block-head">
+              <i class="fas fa-cloud"></i>
+              <h4>Cloud &amp; Practices</h4>
+            </div>
+            <div class="chip-row">
+              <span class="chip">AWS</span>
+              <span class="chip">ETL / Data Lake</span>
+              <span class="chip">CI/CD</span>
+              <span class="chip">Observability</span>
+              <span class="chip">System Design</span>
+              <span class="chip">Query Optimization</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Education -->
+    <section id="education" class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="section-badge">Education</span>
+          <h2>Academic background</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="timeline">
+          <div class="timeline-item animate-on-scroll">
+            <div class="timeline-content">
+              <div class="role-header">
+                <h3>B.Tech, Computer Science &amp; Engineering</h3>
+                <div class="company-info">
+                  <h4>Pune Institute of Computer Technology</h4>
+                  <span class="timeline-date">2019 – 2023</span>
+                  <span class="location">Pune, India</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
     <section id="contact" class="section contact-section">
       <div class="container">
         <div class="section-header animate-on-scroll">
           <span class="section-badge">Contact</span>
-          <h2>Let's Connect</h2>
+          <h2>Let's build something</h2>
           <div class="section-line"></div>
         </div>
 
         <div class="connect-grid">
-          <!-- Main Contact Card -->
           <div class="connect-card main-card animate-on-scroll">
             <div class="card-content">
               <div class="typing-container">
-                <h3 class="typing-text">Ready to Connect</h3>
+                <h3 class="typing-text">Hiring for SDE-2?</h3>
               </div>
-              <p class="persuasive-text">Seeking a driven engineer who consistently delivers high-impact solutions?</p>
-              <p class="manipulation-text">My track record shows a pattern of transforming complex challenges into elegant, efficient solutions. I bring not just technical expertise, but a proven ability to optimize systems and drive meaningful improvements.</p>
+              <p class="persuasive-text">I'm actively exploring senior backend &amp; data engineering roles.</p>
+              <p class="manipulation-text">If you're looking for an engineer who owns problems end to end — designs the system, tunes the queries, and ships the measurable win — let's talk. Fastest way to reach me is email.</p>
               <div class="primary-actions">
                 <a href="mailto:mayureshkhanaj@gmail.com" class="action-button email-btn">
                   <i class="fas fa-envelope"></i>
@@ -526,77 +561,63 @@
             </div>
           </div>
 
-          <!-- Social Links -->
           <div class="social-links-grid">
-            <!-- LinkedIn -->
             <a href="https://linkedin.com/in/mayureshkhanaj" target="_blank" class="social-card linkedin animate-on-scroll">
               <div class="card-overlay"></div>
-              <div class="icon-wrapper">
-                <i class="fab fa-linkedin-in"></i>
-              </div>
+              <div class="icon-wrapper"><i class="fab fa-linkedin-in"></i></div>
               <div class="platform-details">
                 <h4>LinkedIn</h4>
-                <p>Professional Network</p>
-                <span class="link-arrow">→</span>
+                <p>Professional network</p>
               </div>
+              <span class="link-arrow">→</span>
             </a>
 
-            <!-- GitHub -->
             <a href="https://github.com/mayureshkhanaj" target="_blank" class="social-card github animate-on-scroll">
               <div class="card-overlay"></div>
-              <div class="icon-wrapper">
-                <i class="fab fa-github"></i>
-              </div>
+              <div class="icon-wrapper"><i class="fab fa-github"></i></div>
               <div class="platform-details">
                 <h4>GitHub</h4>
-                <p>Open Source & Projects</p>
-                <span class="link-arrow">→</span>
+                <p>Code &amp; projects</p>
               </div>
+              <span class="link-arrow">→</span>
             </a>
 
-            <!-- LeetCode -->
             <a href="https://leetcode.com/mayureshkhanaj" target="_blank" class="social-card leetcode animate-on-scroll">
               <div class="card-overlay"></div>
-              <div class="icon-wrapper">
-                <i class="fas fa-code"></i>
-              </div>
+              <div class="icon-wrapper"><i class="fas fa-code"></i></div>
               <div class="platform-details">
                 <h4>LeetCode</h4>
-                <p>Problem Solving</p>
-                <span class="link-arrow">→</span>
+                <p>Problem solving</p>
               </div>
+              <span class="link-arrow">→</span>
             </a>
 
-            <!-- HackerRank -->
             <a href="https://hackerrank.com/mayureshkhanaj" target="_blank" class="social-card hackerrank animate-on-scroll">
               <div class="card-overlay"></div>
-              <div class="icon-wrapper">
-                <i class="fab fa-hackerrank"></i>
-              </div>
+              <div class="icon-wrapper"><i class="fab fa-hackerrank"></i></div>
               <div class="platform-details">
                 <h4>HackerRank</h4>
-                <p>Coding Challenges</p>
-                <span class="link-arrow">→</span>
+                <p>Coding challenges</p>
               </div>
+              <span class="link-arrow">→</span>
             </a>
           </div>
 
-          <!-- Location & Availability -->
           <div class="status-card animate-on-scroll">
             <div class="status-item">
               <i class="fas fa-map-marker-alt location-pulse"></i>
               <div class="status-content">
-                <a href="https://goo.gl/maps/pune" target="_blank" class="location-link">
+                <a href="https://maps.google.com/?q=Pune,India" target="_blank" class="location-link">
                   <h4>Pune, India</h4>
-                  <p>Open to Relocation <span class="location-hint">→ View on Maps</span></p>
+                  <p>Open to relocation <span class="location-hint">→ View on Maps</span></p>
                 </a>
               </div>
             </div>
-            <div class="status-divider animated-divider"></div>
+            <div class="status-divider"></div>
             <div class="status-item">
               <i class="fas fa-clock rotating-icon"></i>
               <div class="status-content">
-                <h4>Response Time</h4>
+                <h4>Response time</h4>
                 <p>Usually within 24 hours</p>
               </div>
             </div>
@@ -608,7 +629,14 @@
 
   <footer class="footer">
     <div class="container">
-      <p>&copy; 2025 Mayuresh Khanaj. Built with passion for great software.</p>
+      <div class="footer-content">
+        <p>&copy; 2026 Mayuresh Khanaj · Built from scratch, deployed with care.</p>
+        <div class="footer-social">
+          <a href="https://github.com/mayureshkhanaj" target="_blank" class="social-link" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          <a href="https://linkedin.com/in/mayureshkhanaj" target="_blank" class="social-link" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+          <a href="mailto:mayureshkhanaj@gmail.com" class="social-link" aria-label="Email"><i class="fas fa-envelope"></i></a>
+        </div>
+      </div>
     </div>
   </footer>
 
