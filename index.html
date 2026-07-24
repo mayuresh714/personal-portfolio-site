@@ -7,8 +7,8 @@
 <head>
 <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Mayuresh Khanaj • Backend &amp; Data Engineer (SDE-2)</title>
-  <meta name="description" content="Mayuresh Khanaj — Software Development Engineer II at TraceLink. Backend, distributed systems and data engineering in Java, RxJava, Spark and PostgreSQL, plus applied AI (multi-agent systems). Open to Senior / SDE-2 roles.">
+  <title>Mayuresh Khanaj • AI, Backend &amp; Data Engineer (SDE-2)</title>
+  <meta name="description" content="Mayuresh Khanaj — SDE-2 at TraceLink working across AI, backend and data engineering. Java/RxJava backends, Spark/Redshift/PostgreSQL data pipelines, and GenAI &amp; agentic-AI systems on AWS Bedrock (Opus Brain, multi-agent, RAG). Open to SDE-2 / Senior roles.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -57,20 +57,23 @@
         <div class="hero-content">
           <div class="hero-badge">
             <span class="badge-icon"></span>
-            <span class="badge-text">Open to Senior / SDE-2 backend &amp; data roles</span>
+            <span class="badge-text">Open to SDE-2 / Senior — AI, Backend &amp; Data Engineering</span>
           </div>
 
           <div class="hero-headline">
             <h1 class="main-title">
               <span class="title-line small">Hi, I'm</span>
               <span class="title-line name-highlight">Mayuresh Khanaj</span>
-              <span class="title-line title-role">Backend &amp; Data Engineer</span>
+              <span class="title-line title-role">AI · Backend · Data Engineer</span>
             </h1>
 
             <p class="hero-subtitle">
-              I design and ship <strong>scalable backend systems and data pipelines</strong> at
-              <strong>TraceLink</strong>. I care about distributed systems, database internals,
-              and applied AI — from reactive services to multi-agent systems.
+              SDE-2 at <strong>TraceLink</strong>, working across three lanes that overlap more every year:
+              I ship <strong>production backend services</strong> (Java, RxJava, GraphQL), build
+              <strong>distributed data pipelines</strong> (Spark, Redshift, PostgreSQL), and design
+              <strong>GenAI &amp; agentic-AI systems</strong> — including <strong>Opus Brain</strong>, a
+              multi-agent platform on AWS Bedrock. I'm looking for backend, data, or AI-engineering roles —
+              and the intersection of all three.
             </p>
           </div>
 
@@ -104,12 +107,17 @@
             <div class="tech-label">Core stack</div>
             <div class="tech-stack">
               <span class="tech-item">Java</span>
-              <span class="tech-item">RxJava</span>
               <span class="tech-item">Python</span>
+              <span class="tech-item">RxJava</span>
+              <span class="tech-item">Spring Boot</span>
+              <span class="tech-item">GraphQL</span>
               <span class="tech-item">Apache Spark</span>
               <span class="tech-item">PostgreSQL</span>
               <span class="tech-item">Redshift</span>
               <span class="tech-item">AWS</span>
+              <span class="tech-item">AWS Bedrock</span>
+              <span class="tech-item">LLMs &amp; RAG</span>
+              <span class="tech-item">Multi-Agent Systems</span>
             </div>
           </div>
         </div>
@@ -131,7 +139,7 @@
             <div class="profile-links">
               <a href="https://linkedin.com/in/mayureshkhanaj" target="_blank" rel="noopener" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
               <a href="https://github.com/mayuresh714" target="_blank" rel="noopener" aria-label="GitHub"><i class="fab fa-github"></i></a>
-              <a href="https://leetcode.com/mayureshkhanaj" target="_blank" rel="noopener" aria-label="LeetCode"><i class="fas fa-code"></i></a>
+              <a href="https://leetcode.com/u/natsamrat/" target="_blank" rel="noopener" aria-label="LeetCode"><i class="fas fa-code"></i></a>
               <a href="mailto:mayureshkhanaj@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
             </div>
           </div>
@@ -151,9 +159,9 @@
         <div class="about-content">
           <div class="about-intro animate-on-scroll">
             <p class="lead">
-              I'm a backend and data engineer who likes owning a problem end to end — from
-              schema design and query plans to reactive services and the dashboards that prove it
-              worked. I operate at <strong>SDE-2 level</strong>: scoping ambiguous work, making the
+              I'm an engineer who owns problems end to end across <strong>AI, backend, and data</strong> —
+              from schema design and query plans to reactive services and the multi-agent systems that sit
+              on top of them. I operate at <strong>SDE-2 level</strong>: scoping ambiguous work, making the
               architecture calls, and leaving systems faster and easier to reason about than I found them.
             </p>
           </div>
@@ -403,44 +411,6 @@
             </div>
           </div>
 
-          <!-- Case 2 -->
-          <div class="case-card animate-on-scroll">
-            <div class="case-head">
-              <h3>RocksDB → Postgres re-architecture</h3>
-              <span class="project-type">Systems</span>
-            </div>
-            <div class="case-metric">
-              <span class="m-num">Durable</span>
-              <span class="m-label">&amp; queryable tracking store</span>
-            </div>
-            <div class="case-body">
-              <div class="case-row">
-                <span class="case-label">Problem</span>
-                <p>A RocksDB-backed tracking layer was fast but opaque — hard to query, back up, and reason about during incidents.</p>
-              </div>
-              <div class="case-row">
-                <span class="case-label">Approach</span>
-                <p>Migrated the model to a Postgres-backed architecture with a schema built for the real access patterns and recovery needs.</p>
-              </div>
-              <div class="case-extra case-body">
-                <div class="case-row">
-                  <span class="case-label">Trade-offs</span>
-                  <p>Traded raw embedded-KV speed for durability, ad-hoc queryability and operational simplicity — the right call for this workload.</p>
-                </div>
-                <div class="case-row">
-                  <span class="case-label">Impact</span>
-                  <p>Recovery and debugging became straightforward, and analytics could join directly against tracking data.</p>
-                </div>
-              </div>
-            </div>
-            <button class="case-toggle" type="button">More detail <i class="fas fa-chevron-down"></i></button>
-            <div class="project-tech">
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">RocksDB</span>
-              <span class="tech-tag">Java</span>
-            </div>
-          </div>
-
           <!-- Case 3 -->
           <div class="case-card animate-on-scroll">
             <div class="case-head">
@@ -648,10 +618,10 @@
           <div class="connect-card main-card animate-on-scroll">
             <div class="card-content">
               <div class="typing-container">
-                <h3 class="typing-text">Hiring for SDE-2?</h3>
+                <h3 class="typing-text">Hiring for AI, backend or data?</h3>
               </div>
-              <p class="persuasive-text">I'm actively exploring senior backend &amp; data engineering roles.</p>
-              <p class="manipulation-text">If you're looking for an engineer who owns problems end to end — designs the system, tunes the queries, and ships the measurable win — let's talk. Fastest way to reach me is email.</p>
+              <p class="persuasive-text">I'm actively exploring SDE-2 / senior roles across AI engineering, backend, and data engineering.</p>
+              <p class="manipulation-text">If you want an engineer who ships <strong>GenAI and agentic-AI products</strong> and owns the <strong>backend and data</strong> underneath them — designing the system, tuning the queries, and proving the win with real metrics — let's talk. Fastest way to reach me is email.</p>
               <div class="primary-actions">
                 <a href="mailto:mayureshkhanaj@gmail.com" class="action-button email-btn">
                   <i class="fas fa-envelope"></i>
@@ -686,7 +656,7 @@
               <span class="link-arrow">→</span>
             </a>
 
-            <a href="https://leetcode.com/mayureshkhanaj" target="_blank" rel="noopener" class="social-card leetcode animate-on-scroll">
+            <a href="https://leetcode.com/u/natsamrat/" target="_blank" rel="noopener" class="social-card leetcode animate-on-scroll">
               <div class="card-overlay"></div>
               <div class="icon-wrapper"><i class="fas fa-code"></i></div>
               <div class="platform-details">

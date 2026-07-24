@@ -1,0 +1,36 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Building Opus Brain — Applied AI, Multi-Agent">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a0e17"/><stop offset="1" stop-color="#151c2c"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="80" y1="0" x2="720" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7c9cff"/><stop offset="0.5" stop-color="#a78bfa"/><stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(980 120) rotate(120) scale(520)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7c9cff" stop-opacity="0.30"/><stop offset="1" stop-color="#7c9cff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0" cy="0" r="1" gradientTransform="translate(120 560) rotate(-40) scale(460)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#c084fc" stop-opacity="0.22"/><stop offset="1" stop-color="#c084fc" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="630" fill="url(#glow2)"/>
+  <rect width="1200" height="6" fill="url(#acc)"/>
+  <!-- agent DAG motif -->
+  <g stroke="#7c9cff" stroke-opacity="0.5" stroke-width="2">
+    <line x1="960" y1="300" x2="860" y2="200"/><line x1="960" y1="300" x2="860" y2="300"/><line x1="960" y1="300" x2="860" y2="400"/>
+    <line x1="860" y1="200" x2="1060" y2="150"/><line x1="860" y1="200" x2="1060" y2="250"/>
+    <line x1="860" y1="400" x2="1060" y2="380"/><line x1="860" y1="400" x2="1060" y2="470"/>
+  </g>
+  <g fill="#0a0e17" stroke="url(#acc)" stroke-width="3">
+    <circle cx="960" cy="300" r="26"/><circle cx="860" cy="200" r="18"/><circle cx="860" cy="300" r="18"/><circle cx="860" cy="400" r="18"/>
+    <circle cx="1060" cy="150" r="14"/><circle cx="1060" cy="250" r="14"/><circle cx="1060" cy="380" r="14"/><circle cx="1060" cy="470" r="14"/>
+  </g>
+  <rect x="80" y="96" width="360" height="48" rx="24" fill="#7c9cff" fill-opacity="0.12" stroke="#7c9cff" stroke-opacity="0.35"/>
+  <text x="106" y="127" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="2" fill="#a5b8ff">APPLIED AI · MULTI-AGENT</text>
+  <text x="78" y="308" font-family="Inter, Arial, sans-serif" font-size="82" font-weight="800" fill="#e8edf6">Building Opus Brain</text>
+  <text x="80" y="378" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500" fill="#9aa7bd">A multi-agent layer over a supply-chain network</text>
+  <text x="80" y="556" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="600" fill="#7c9cff">Mayuresh Khanaj</text>
+  <text x="304" y="556" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="400" fill="#6b7891">— Engineering Blog</text>
+</svg>
