@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Building Opus Brain: a multi-agent layer over a supply-chain network — Blog</title>
+  <meta name="description" content="How I designed Opus Brain — an in-house multi-agent orchestrator on AWS Bedrock that runs compliance audits, analytics and process automation over TraceLink's supply-chain data.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../styles.css"/>
+  <style>
+    /* Dark-theme article + header styling comes from styles.css */
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="header-container">
+      <div class="header-brand">
+        <a href="../index.html"><span>Mayuresh Khanaj</span></a>
+      </div>
+      <nav class="header-nav">
+        <a href="../index.html">Home</a>
+        <a href="../index.html#work">Case Studies</a>
+        <a href="../index.html#contact">Contact</a>
+        <a href="../blog.html">Blog</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <article class="blog-article">
+      <h1>Building Opus Brain: a multi-agent layer over a supply-chain network</h1>
+
+      <p>
+        <strong>Opus Brain</strong> is an intelligence layer over TraceLink's supply-chain network.
+        A customer writes a <em>metaprompt</em> — a plain-language description of what they want an
+        agent to do — and the platform runs it against their own supply-chain data: compliance
+        audits, analytics, and the repetitive process work that piles up around purchase orders,
+        invoices, and payment flagging.
+      </p>
+      <p>
+        I designed the orchestrator and the multi-agent architecture behind it, built the
+        tool-calling layer, and wrote the evaluation setup. This is a look at the interesting
+        decisions — especially <em>why we built it in-house</em> instead of reaching for an
+        off-the-shelf agent framework.
+      </p>
+
+      <h2>The problem: the data model didn't fit the tools</h2>
+      <p>
+        The appealing pitch for agents is "point a framework at your data and let it reason." That
+        breaks the moment your data isn't one clean store. Supply-chain objects at TraceLink live
+        across <strong>separate applications, microservices, and databases</strong> — a purchase
+        order, its line items, the invoice that references it, and the payment that settles it can
+        each sit behind a different service with its own API and its own model of the world.
+      </p>
+      <p>
+        No off-the-shelf agent framework mapped cleanly onto that. So the real work wasn't prompt
+        engineering — it was <strong>giving agents a faithful, governed way to reach a distributed
+        data model</strong>, and being able to prove the answers were right.
+      </p>
+
+      <h2>The architecture: plan, act, validate</h2>
+      <p>
+        The orchestrator splits every request into three roles, so no single agent is doing
+        everything at once:
+      </p>
+
+      <div class="performance-comparison">
+        <div class="comparison-item">
+          <h4>Master planner</h4>
+          <p>Decomposes the metaprompt into a structured plan — the sub-tasks, their dependencies, and what "done" looks like.</p>
+        </div>
+        <div class="comparison-item">
+          <h4>Tool-calling agent</h4>
+          <p>Executes the plan by spawning a <strong>DAG of downstream calls</strong> — retrieval, data access, code — respecting dependencies between steps.</p>
+        </div>
+        <div class="comparison-item">
+          <h4>Validation agents</h4>
+          <p>Check the output before it goes back to the user, so a plausible-but-wrong answer doesn't slip through.</p>
+        </div>
+      </div>
+
+      <p>
+        Modelling execution as a <strong>DAG</strong> rather than a linear chain matters: independent
+        sub-tasks can fan out and run concurrently, while genuine dependencies are still honoured.
+        It also gives you a natural place to retry or short-circuit a branch without redoing the
+        whole plan.
+      </p>
+
+      <h2>The tool-calling layer</h2>
+      <p>
+        Agents are only as capable as the tools you give them. I built the layer that lets the
+        tool-calling agent actually <em>do</em> things against the network:
+      </p>
+      <ul>
+        <li><strong>Knowledge retrieval</strong> — pull the right context out of the supply-chain data before acting on it.</li>
+        <li><strong>CRUD / GraphQL generation</strong> — turn an intent into the concrete queries and mutations that hit the underlying services.</li>
+        <li><strong>Code generation</strong> — synthesize logic for the analytical and process work that can't be expressed as a single query.</li>
+        <li><strong>Memory manager</strong> — extract and track entities across steps so long-running tasks stay coherent instead of losing the thread halfway through.</li>
+      </ul>
+      <p>
+        The memory manager is the piece people underestimate. For a one-shot question you can get
+        away without it; for a multi-step audit that touches dozens of related objects, you need a
+        durable notion of "the entities we're working with" or the agent forgets what it was doing.
+      </p>
+
+      <h2>Why in-house on AWS Bedrock</h2>
+      <p>
+        Adopting a ready-made framework would have been faster to a demo and slower to a product.
+        The distributed data model was the deciding factor: the abstractions a generic framework
+        gives you assume a shape our data didn't have. Building on <strong>AWS Bedrock</strong>
+        in-house was more upfront work, but it bought three things that mattered:
+      </p>
+      <ul>
+        <li><strong>Control over tools</strong> — we could model access to each service and database exactly, instead of forcing it through a generic connector.</li>
+        <li><strong>Control over memory</strong> — entity extraction tuned to supply-chain objects, not a generic vector dump.</li>
+        <li><strong>Control over evaluation</strong> — we could wire correctness checks into the loop rather than bolting them on afterward.</li>
+      </ul>
+
+      <h2>Evaluation: deterministic checks + LLM-as-judge</h2>
+      <p>
+        For compliance and finance-adjacent work, "it usually looks right" is not acceptable. The
+        evaluation setup combines two approaches over <strong>golden datasets</strong>:
+      </p>
+      <div class="performance-comparison">
+        <div class="comparison-item">
+          <h4>Deterministic checks</h4>
+          <p>For anything with a knowable right answer — did the numbers reconcile, did the query return the expected shape — assert it directly. Fast, cheap, and non-negotiable.</p>
+        </div>
+        <div class="comparison-item">
+          <h4>LLM-as-judge</h4>
+          <p>For open-ended output where there's no single correct string, a judge model scores quality against a rubric — graded against golden examples to keep the judge honest.</p>
+        </div>
+      </div>
+      <p>
+        The golden datasets are what make this trustworthy: they turn "the agent felt better this
+        week" into a measurable regression suite you can run on every change.
+      </p>
+
+      <h2>What I'd carry to the next system</h2>
+      <ul>
+        <li><strong>Separate planning from acting from checking.</strong> Collapsing them into one prompt is how you get confident, unverifiable answers.</li>
+        <li><strong>Model execution as a DAG.</strong> It gives you concurrency, dependency-awareness, and clean retry boundaries for free.</li>
+        <li><strong>Buy control where your data is weird.</strong> An off-the-shelf framework is great until your data model fights it; then in-house pays for itself.</li>
+        <li><strong>Evaluation is a first-class feature, not a phase.</strong> Deterministic where you can, judged where you can't, golden datasets underneath both.</li>
+      </ul>
+
+      <p>
+        Opus Brain was the most end-to-end system-design work I've done: ambiguous requirements, a
+        genuinely hard data model, and a bar for correctness that meant the evaluation harness was
+        as important as the agents themselves.
+      </p>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>&copy; 2026 Mayuresh Khanaj. Built with passion for great software.</p>
+    </div>
+  </footer>
+</body>
+</html>

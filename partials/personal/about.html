@@ -1,0 +1,77 @@
+    <!-- About -->
+    <section id="about" class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="section-badge">About</span>
+          <h2>Engineering that moves the metric</h2>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="about-content">
+          <div class="about-intro animate-on-scroll">
+            <p class="lead">
+              I'm a backend and data engineer who likes owning a problem end to end — from
+              schema design and query plans to reactive services and the dashboards that prove it
+              worked. I operate at <strong>SDE-2 level</strong>: scoping ambiguous work, making the
+              architecture calls, and leaving systems faster and easier to reason about than I found them.
+            </p>
+          </div>
+
+          <div class="highlights">
+            <div class="highlight-item expandable animate-on-scroll" data-expanded="false">
+              <div class="highlight-header">
+                <i class="fas fa-database"></i>
+                <div class="highlight-title">
+                  <h4>Data engineering at scale</h4>
+                  <p class="highlight-preview">Enterprise ETL and analytics pipelines on Spark, Redshift &amp; Aurora</p>
+                </div>
+                <i class="fas fa-chevron-down expand-icon"></i>
+              </div>
+              <div class="highlight-details">
+                <ul>
+                  <li>Built <strong>Redshift–Aurora integrations</strong> with materialized views to serve analytics without hammering OLTP.</li>
+                  <li>Designed ETL workflows handling <strong>1TB+ of data daily</strong> with partitioning and validation baked in.</li>
+                  <li>Tuned distributed queries and data-quality checks to keep pipelines correct and cheap.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="highlight-item expandable animate-on-scroll" data-expanded="false">
+              <div class="highlight-header">
+                <i class="fas fa-gauge-high"></i>
+                <div class="highlight-title">
+                  <h4>Performance &amp; reliability</h4>
+                  <p class="highlight-preview">~30% faster report generation via reactive RxJava pipelines</p>
+                </div>
+                <i class="fas fa-chevron-down expand-icon"></i>
+              </div>
+              <div class="highlight-details">
+                <ul>
+                  <li>Rewrote CSV report generation with <strong>RxJava reactive streams</strong>, cutting runtime by ~30%.</li>
+                  <li>Re-architected RocksDB-based tracking onto a <strong>Postgres-backed</strong> design for durability and queryability.</li>
+                  <li>Improved observability so regressions surface before customers notice them.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="highlight-item expandable animate-on-scroll" data-expanded="false">
+              <div class="highlight-header">
+                <i class="fas fa-robot"></i>
+                <div class="highlight-title">
+                  <h4>Applied AI &amp; multi-agent systems</h4>
+                  <p class="highlight-preview">Designed Opus Brain's orchestrator &amp; agent architecture on AWS Bedrock</p>
+                </div>
+                <i class="fas fa-chevron-down expand-icon"></i>
+              </div>
+              <div class="highlight-details">
+                <ul>
+                  <li>Designed <strong>Opus Brain</strong>'s orchestrator: a master planner decomposes each request, a tool-calling agent spawns a <strong>DAG of downstream calls</strong>, and validation agents check the output.</li>
+                  <li>Built the tool-calling layer — knowledge retrieval, CRUD/GraphQL generation, code generation, and a <strong>memory manager</strong> that extracts entities for long-running tasks.</li>
+                  <li>Wrote the evaluation harness: <strong>deterministic checks + LLM-as-judge</strong> over golden datasets.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>

@@ -1,0 +1,168 @@
+    <!-- Case Studies -->
+    <section id="work" class="section">
+      <div class="container">
+        <div class="section-header animate-on-scroll">
+          <span class="section-badge">Case Studies</span>
+          <h2>Problems I've solved</h2>
+          <p>Each one framed the way I'd walk an interviewer through it: the problem, the approach, the trade-offs, and the measurable result.</p>
+          <div class="section-line"></div>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Case 0: Opus Brain -->
+          <div class="case-card animate-on-scroll">
+            <div class="case-head">
+              <h3>Opus Brain — multi-agent supply-chain platform</h3>
+              <span class="project-type">Applied AI</span>
+            </div>
+            <div class="case-metric">
+              <span class="m-num">0→1</span>
+              <span class="m-label">in-house agent platform on AWS Bedrock</span>
+            </div>
+            <div class="case-body">
+              <div class="case-row">
+                <span class="case-label">Problem</span>
+                <p>Customers wanted to run compliance audits, analytics and repetitive process work — over purchase orders, invoices and payment flagging — just by describing the task. But supply-chain objects live across separate apps, microservices and databases, and no off-the-shelf agent framework mapped onto that data model.</p>
+              </div>
+              <div class="case-row">
+                <span class="case-label">Approach</span>
+                <p>Designed an in-house multi-agent orchestrator on AWS Bedrock: a master planner decomposes each metaprompt, a tool-calling agent spawns a DAG of downstream calls, and validation agents verify the result before it's returned.</p>
+              </div>
+              <div class="case-extra case-body">
+                <div class="case-row">
+                  <span class="case-label">What I built</span>
+                  <p>The tool-calling layer — knowledge retrieval, CRUD/GraphQL generation, code generation, and a memory manager that extracts entities for long-running tasks — plus the evaluation harness of deterministic checks and LLM-as-judge over golden datasets.</p>
+                </div>
+                <div class="case-row">
+                  <span class="case-label">Trade-offs</span>
+                  <p>Building in-house instead of adopting a framework was more upfront work, but it was the only way to fit the messy, distributed data model — and it gave full control over tooling, memory and evaluation.</p>
+                </div>
+              </div>
+            </div>
+            <button class="case-toggle" type="button">More detail <i class="fas fa-chevron-down"></i></button>
+            <div class="project-tech">
+              <span class="tech-tag">AWS Bedrock</span>
+              <span class="tech-tag">Multi-Agent</span>
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">GraphQL</span>
+              <span class="tech-tag">LLM-as-Judge</span>
+            </div>
+          </div>
+
+          <!-- Case 1 -->
+          <div class="case-card animate-on-scroll">
+            <div class="case-head">
+              <h3>Reactive report generation</h3>
+              <span class="project-type">Backend</span>
+            </div>
+            <div class="case-metric">
+              <span class="m-num">~30%</span>
+              <span class="m-label">faster report runtime</span>
+            </div>
+            <div class="case-body">
+              <div class="case-row">
+                <span class="case-label">Problem</span>
+                <p>Large CSV report generation was slow and blocking, tying up threads and delaying downstream delivery.</p>
+              </div>
+              <div class="case-row">
+                <span class="case-label">Approach</span>
+                <p>Rebuilt the pipeline around RxJava reactive streams — backpressure-aware, non-blocking, and streamed instead of buffered.</p>
+              </div>
+              <div class="case-extra case-body">
+                <div class="case-row">
+                  <span class="case-label">Trade-offs</span>
+                  <p>Reactive code is harder to read and debug, so I invested in clear operator boundaries and metrics to keep it maintainable for the team.</p>
+                </div>
+                <div class="case-row">
+                  <span class="case-label">Impact</span>
+                  <p>~30% runtime reduction and steadier resource usage under load, with report SLAs consistently met.</p>
+                </div>
+              </div>
+            </div>
+            <button class="case-toggle" type="button">More detail <i class="fas fa-chevron-down"></i></button>
+            <div class="project-tech">
+              <span class="tech-tag">RxJava</span>
+              <span class="tech-tag">Java</span>
+              <span class="tech-tag">PostgreSQL</span>
+            </div>
+          </div>
+
+          <!-- Case 2 -->
+          <div class="case-card animate-on-scroll">
+            <div class="case-head">
+              <h3>RocksDB → Postgres re-architecture</h3>
+              <span class="project-type">Systems</span>
+            </div>
+            <div class="case-metric">
+              <span class="m-num">Durable</span>
+              <span class="m-label">&amp; queryable tracking store</span>
+            </div>
+            <div class="case-body">
+              <div class="case-row">
+                <span class="case-label">Problem</span>
+                <p>A RocksDB-backed tracking layer was fast but opaque — hard to query, back up, and reason about during incidents.</p>
+              </div>
+              <div class="case-row">
+                <span class="case-label">Approach</span>
+                <p>Migrated the model to a Postgres-backed architecture with a schema built for the real access patterns and recovery needs.</p>
+              </div>
+              <div class="case-extra case-body">
+                <div class="case-row">
+                  <span class="case-label">Trade-offs</span>
+                  <p>Traded raw embedded-KV speed for durability, ad-hoc queryability and operational simplicity — the right call for this workload.</p>
+                </div>
+                <div class="case-row">
+                  <span class="case-label">Impact</span>
+                  <p>Recovery and debugging became straightforward, and analytics could join directly against tracking data.</p>
+                </div>
+              </div>
+            </div>
+            <button class="case-toggle" type="button">More detail <i class="fas fa-chevron-down"></i></button>
+            <div class="project-tech">
+              <span class="tech-tag">PostgreSQL</span>
+              <span class="tech-tag">RocksDB</span>
+              <span class="tech-tag">Java</span>
+            </div>
+          </div>
+
+          <!-- Case 3 -->
+          <div class="case-card animate-on-scroll">
+            <div class="case-head">
+              <h3>Redshift–Aurora analytics bridge</h3>
+              <span class="project-type">Data Eng</span>
+            </div>
+            <div class="case-metric">
+              <span class="m-num">1TB+</span>
+              <span class="m-label">daily, without OLTP strain</span>
+            </div>
+            <div class="case-body">
+              <div class="case-row">
+                <span class="case-label">Problem</span>
+                <p>Analytics queries risked overloading the Aurora OLTP database that also served live traffic.</p>
+              </div>
+              <div class="case-row">
+                <span class="case-label">Approach</span>
+                <p>Designed a Redshift–Aurora integration with materialized views so heavy analytical reads hit the warehouse, not production.</p>
+              </div>
+              <div class="case-extra case-body">
+                <div class="case-row">
+                  <span class="case-label">Trade-offs</span>
+                  <p>Accepted eventual freshness on analytics in exchange for protecting OLTP latency — tuned refresh cadence to the business need.</p>
+                </div>
+                <div class="case-row">
+                  <span class="case-label">Impact</span>
+                  <p>Stable transactional performance alongside rich analytics over 1TB+/day of pipeline data.</p>
+                </div>
+              </div>
+            </div>
+            <button class="case-toggle" type="button">More detail <i class="fas fa-chevron-down"></i></button>
+            <div class="project-tech">
+              <span class="tech-tag">Redshift</span>
+              <span class="tech-tag">Aurora</span>
+              <span class="tech-tag">Spark</span>
+              <span class="tech-tag">SQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
