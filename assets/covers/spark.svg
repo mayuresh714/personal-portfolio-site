@@ -1,0 +1,29 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Apache Spark Optimization — Big Data Performance">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a0e17"/><stop offset="1" stop-color="#151c2c"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="80" y1="0" x2="720" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7c9cff"/><stop offset="0.5" stop-color="#a78bfa"/><stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(1000 150) rotate(130) scale(520)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#fbbf24" stop-opacity="0.16"/><stop offset="1" stop-color="#fbbf24" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="6" fill="url(#acc)"/>
+  <!-- bars motif -->
+  <g fill="url(#acc)" opacity="0.85">
+    <rect x="880" y="360" width="34" height="90" rx="6"/>
+    <rect x="928" y="300" width="34" height="150" rx="6"/>
+    <rect x="976" y="230" width="34" height="220" rx="6"/>
+    <rect x="1024" y="180" width="34" height="270" rx="6"/>
+  </g>
+  <rect x="80" y="96" width="320" height="48" rx="24" fill="#7c9cff" fill-opacity="0.12" stroke="#7c9cff" stroke-opacity="0.35"/>
+  <text x="106" y="127" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="2" fill="#a5b8ff">BIG DATA · PERFORMANCE</text>
+  <text x="78" y="300" font-family="Inter, Arial, sans-serif" font-size="82" font-weight="800" fill="#e8edf6">Apache Spark</text>
+  <text x="80" y="370" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500" fill="#9aa7bd">Optimization techniques for data engineers</text>
+  <text x="80" y="556" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="600" fill="#7c9cff">Mayuresh Khanaj</text>
+  <text x="304" y="556" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="400" fill="#6b7891">— Engineering Blog</text>
+</svg>

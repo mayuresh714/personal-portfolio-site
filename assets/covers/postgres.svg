@@ -1,0 +1,32 @@
+<svg width="1200" height="630" viewBox="0 0 1200 630" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="PostgreSQL TRGM Indexes — Databases, Search">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0a0e17"/><stop offset="1" stop-color="#151c2c"/>
+    </linearGradient>
+    <linearGradient id="acc" x1="80" y1="0" x2="720" y2="0" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7c9cff"/><stop offset="0.5" stop-color="#a78bfa"/><stop offset="1" stop-color="#c084fc"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0" cy="0" r="1" gradientTransform="translate(1000 150) rotate(130) scale(520)" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#7c9cff" stop-opacity="0.24"/><stop offset="1" stop-color="#7c9cff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect width="1200" height="6" fill="url(#acc)"/>
+  <!-- search / index motif -->
+  <g stroke="url(#acc)" stroke-width="6" fill="none" stroke-linecap="round">
+    <circle cx="960" cy="270" r="72"/>
+    <line x1="1012" y1="322" x2="1070" y2="380"/>
+  </g>
+  <g fill="#7c9cff" fill-opacity="0.55">
+    <rect x="905" y="250" width="42" height="10" rx="5"/>
+    <rect x="905" y="272" width="70" height="10" rx="5"/>
+    <rect x="905" y="294" width="30" height="10" rx="5"/>
+  </g>
+  <rect x="80" y="96" width="300" height="48" rx="24" fill="#7c9cff" fill-opacity="0.12" stroke="#7c9cff" stroke-opacity="0.35"/>
+  <text x="106" y="127" font-family="Inter, Arial, sans-serif" font-size="21" font-weight="700" letter-spacing="2" fill="#a5b8ff">DATABASES · SEARCH</text>
+  <text x="78" y="300" font-family="Inter, Arial, sans-serif" font-size="82" font-weight="800" fill="#e8edf6">PostgreSQL TRGM</text>
+  <text x="80" y="370" font-family="Inter, Arial, sans-serif" font-size="34" font-weight="500" fill="#9aa7bd">Trigram indexes for fast fuzzy search</text>
+  <text x="80" y="556" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="600" fill="#7c9cff">Mayuresh Khanaj</text>
+  <text x="304" y="556" font-family="Inter, Arial, sans-serif" font-size="26" font-weight="400" fill="#6b7891">— Engineering Blog</text>
+</svg>

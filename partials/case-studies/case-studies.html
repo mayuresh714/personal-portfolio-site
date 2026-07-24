@@ -87,44 +87,6 @@
             </div>
           </div>
 
-          <!-- Case 2 -->
-          <div class="case-card animate-on-scroll">
-            <div class="case-head">
-              <h3>RocksDB → Postgres re-architecture</h3>
-              <span class="project-type">Systems</span>
-            </div>
-            <div class="case-metric">
-              <span class="m-num">Durable</span>
-              <span class="m-label">&amp; queryable tracking store</span>
-            </div>
-            <div class="case-body">
-              <div class="case-row">
-                <span class="case-label">Problem</span>
-                <p>A RocksDB-backed tracking layer was fast but opaque — hard to query, back up, and reason about during incidents.</p>
-              </div>
-              <div class="case-row">
-                <span class="case-label">Approach</span>
-                <p>Migrated the model to a Postgres-backed architecture with a schema built for the real access patterns and recovery needs.</p>
-              </div>
-              <div class="case-extra case-body">
-                <div class="case-row">
-                  <span class="case-label">Trade-offs</span>
-                  <p>Traded raw embedded-KV speed for durability, ad-hoc queryability and operational simplicity — the right call for this workload.</p>
-                </div>
-                <div class="case-row">
-                  <span class="case-label">Impact</span>
-                  <p>Recovery and debugging became straightforward, and analytics could join directly against tracking data.</p>
-                </div>
-              </div>
-            </div>
-            <button class="case-toggle" type="button">More detail <i class="fas fa-chevron-down"></i></button>
-            <div class="project-tech">
-              <span class="tech-tag">PostgreSQL</span>
-              <span class="tech-tag">RocksDB</span>
-              <span class="tech-tag">Java</span>
-            </div>
-          </div>
-
           <!-- Case 3 -->
           <div class="case-card animate-on-scroll">
             <div class="case-head">
