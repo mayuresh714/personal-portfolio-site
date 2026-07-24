@@ -508,7 +508,7 @@ a { color: inherit; }
 }
 .case-row p { font-size: 0.9rem; color: var(--text-secondary); line-height: 1.55; }
 .case-extra { display: none; }
-.case-card.open .case-extra { display: grid; }
+.case-card.open .case-extra { display: grid; animation: fadeUp 0.35s cubic-bezier(0.16,1,0.3,1); }
 .case-toggle {
   background: none; border: none; color: var(--accent); font-weight: 600; font-size: 0.85rem;
   cursor: pointer; padding: 0; display: inline-flex; align-items: center; gap: 0.4rem;
@@ -524,6 +524,42 @@ a { color: inherit; }
   transition: var(--transition);
 }
 .tech-tag:hover { color: var(--accent); border-color: var(--accent-border); }
+
+/* ================= Open-source / repo cards ================= */
+.repo-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 1.4rem; max-width: var(--max-width); margin: 0 auto; }
+.repo-card {
+  display: flex; flex-direction: column;
+  background: var(--surface); border: 1px solid var(--border);
+  border-radius: var(--radius-lg); padding: 1.6rem; text-decoration: none; color: var(--text);
+  position: relative; overflow: hidden; transition: var(--transition-slow);
+}
+.repo-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--grad); transform: scaleX(0); transform-origin: left; transition: transform 0.4s ease;
+}
+.repo-card:hover { transform: translateY(-6px); border-color: var(--accent-border); box-shadow: var(--shadow-md); }
+.repo-card:hover::before { transform: scaleX(1); }
+.repo-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.repo-icon {
+  width: 48px; height: 48px; display: grid; place-items: center; border-radius: 12px;
+  background: var(--accent-soft); color: var(--accent); font-size: 1.2rem; transition: var(--transition);
+}
+.repo-card:hover .repo-icon { background: var(--grad); color: #0a0e17; }
+.repo-badge {
+  display: inline-flex; align-items: center; gap: 0.35rem;
+  font-size: 0.72rem; font-weight: 600; letter-spacing: 0.03em; text-transform: uppercase;
+  color: var(--accent-2); background: rgba(192,132,252,0.1); border: 1px solid rgba(192,132,252,0.28);
+  padding: 0.25rem 0.6rem; border-radius: 999px;
+}
+.repo-title { font-size: 1.2rem; font-weight: 700; margin-bottom: 0.6rem; }
+.repo-desc { font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 1.1rem; flex: 1; }
+.repo-link {
+  display: inline-flex; align-items: center; gap: 0.45rem; margin-top: auto;
+  color: var(--accent); font-weight: 600; font-size: 0.9rem; transition: gap 0.3s ease;
+}
+.repo-card:hover .repo-link { gap: 0.75rem; }
+.repo-card-more { background: linear-gradient(160deg, var(--surface) 0%, var(--surface-2) 100%); border-style: dashed; border-color: var(--border-strong); }
+.repo-card .project-tech { margin-top: 0; margin-bottom: 1.1rem; }
 
 /* ================= Contact ================= */
 .contact-section { padding-bottom: 7rem; }
