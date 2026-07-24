@@ -9,6 +9,46 @@
         </div>
 
         <div class="projects-grid">
+          <!-- Case 0: Opus Brain -->
+          <div class="case-card animate-on-scroll">
+            <div class="case-head">
+              <h3>Opus Brain — multi-agent supply-chain platform</h3>
+              <span class="project-type">Applied AI</span>
+            </div>
+            <div class="case-metric">
+              <span class="m-num">0→1</span>
+              <span class="m-label">in-house agent platform on AWS Bedrock</span>
+            </div>
+            <div class="case-body">
+              <div class="case-row">
+                <span class="case-label">Problem</span>
+                <p>Customers wanted to run compliance audits, analytics and repetitive process work — over purchase orders, invoices and payment flagging — just by describing the task. But supply-chain objects live across separate apps, microservices and databases, and no off-the-shelf agent framework mapped onto that data model.</p>
+              </div>
+              <div class="case-row">
+                <span class="case-label">Approach</span>
+                <p>Designed an in-house multi-agent orchestrator on AWS Bedrock: a master planner decomposes each metaprompt, a tool-calling agent spawns a DAG of downstream calls, and validation agents verify the result before it's returned.</p>
+              </div>
+              <div class="case-extra case-body">
+                <div class="case-row">
+                  <span class="case-label">What I built</span>
+                  <p>The tool-calling layer — knowledge retrieval, CRUD/GraphQL generation, code generation, and a memory manager that extracts entities for long-running tasks — plus the evaluation harness of deterministic checks and LLM-as-judge over golden datasets.</p>
+                </div>
+                <div class="case-row">
+                  <span class="case-label">Trade-offs</span>
+                  <p>Building in-house instead of adopting a framework was more upfront work, but it was the only way to fit the messy, distributed data model — and it gave full control over tooling, memory and evaluation.</p>
+                </div>
+              </div>
+            </div>
+            <button class="case-toggle" type="button">More detail <i class="fas fa-chevron-down"></i></button>
+            <div class="project-tech">
+              <span class="tech-tag">AWS Bedrock</span>
+              <span class="tech-tag">Multi-Agent</span>
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">GraphQL</span>
+              <span class="tech-tag">LLM-as-Judge</span>
+            </div>
+          </div>
+
           <!-- Case 1 -->
           <div class="case-card animate-on-scroll">
             <div class="case-head">

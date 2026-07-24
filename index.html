@@ -199,16 +199,16 @@
               <div class="highlight-header">
                 <i class="fas fa-robot"></i>
                 <div class="highlight-title">
-                  <h4>Applied AI &amp; system design</h4>
-                  <p class="highlight-preview">Multi-agent systems, RAG, and end-to-end ownership</p>
+                  <h4>Applied AI &amp; multi-agent systems</h4>
+                  <p class="highlight-preview">Designed Opus Brain's orchestrator &amp; agent architecture on AWS Bedrock</p>
                 </div>
                 <i class="fas fa-chevron-down expand-icon"></i>
               </div>
               <div class="highlight-details">
                 <ul>
-                  <li>Explore <strong>multi-agent systems and RAG</strong> — including an A2A-native agent marketplace protocol.</li>
-                  <li>Own features from design doc to rollout, weighing consistency, throughput and cost trade-offs.</li>
-                  <li>Build reactive <strong>GraphQL APIs</strong> and mentor on SQL/Spark internals.</li>
+                  <li>Designed <strong>Opus Brain</strong>'s orchestrator: a master planner decomposes each request, a tool-calling agent spawns a <strong>DAG of downstream calls</strong>, and validation agents check the output.</li>
+                  <li>Built the tool-calling layer — knowledge retrieval, CRUD/GraphQL generation, code generation, and a <strong>memory manager</strong> that extracts entities for long-running tasks.</li>
+                  <li>Wrote the evaluation harness: <strong>deterministic checks + LLM-as-judge</strong> over golden datasets.</li>
                 </ul>
               </div>
             </div>
@@ -239,6 +239,10 @@
               </div>
               <div class="achievements">
                 <ul>
+                  <li class="achievement-item">
+                    <span class="achievement-icon">🧠</span>
+                    <p>Designed the orchestrator and <strong>multi-agent architecture</strong> for <strong>Opus Brain</strong>, an AI intelligence layer over TraceLink's supply-chain network — master planner, a tool-calling agent that spawns a DAG of downstream calls, and validation agents — built in-house on <strong>AWS Bedrock</strong>.</p>
+                  </li>
                   <li class="achievement-item">
                     <span class="achievement-icon">🔄</span>
                     <p>Designed <strong>Redshift–Aurora integrations</strong> using materialized views to power analytics while keeping transactional load low.</p>
@@ -321,6 +325,46 @@
         </div>
 
         <div class="projects-grid">
+          <!-- Case 0: Opus Brain -->
+          <div class="case-card animate-on-scroll">
+            <div class="case-head">
+              <h3>Opus Brain — multi-agent supply-chain platform</h3>
+              <span class="project-type">Applied AI</span>
+            </div>
+            <div class="case-metric">
+              <span class="m-num">0→1</span>
+              <span class="m-label">in-house agent platform on AWS Bedrock</span>
+            </div>
+            <div class="case-body">
+              <div class="case-row">
+                <span class="case-label">Problem</span>
+                <p>Customers wanted to run compliance audits, analytics and repetitive process work — over purchase orders, invoices and payment flagging — just by describing the task. But supply-chain objects live across separate apps, microservices and databases, and no off-the-shelf agent framework mapped onto that data model.</p>
+              </div>
+              <div class="case-row">
+                <span class="case-label">Approach</span>
+                <p>Designed an in-house multi-agent orchestrator on AWS Bedrock: a master planner decomposes each metaprompt, a tool-calling agent spawns a DAG of downstream calls, and validation agents verify the result before it's returned.</p>
+              </div>
+              <div class="case-extra case-body">
+                <div class="case-row">
+                  <span class="case-label">What I built</span>
+                  <p>The tool-calling layer — knowledge retrieval, CRUD/GraphQL generation, code generation, and a memory manager that extracts entities for long-running tasks — plus the evaluation harness of deterministic checks and LLM-as-judge over golden datasets.</p>
+                </div>
+                <div class="case-row">
+                  <span class="case-label">Trade-offs</span>
+                  <p>Building in-house instead of adopting a framework was more upfront work, but it was the only way to fit the messy, distributed data model — and it gave full control over tooling, memory and evaluation.</p>
+                </div>
+              </div>
+            </div>
+            <button class="case-toggle" type="button">More detail <i class="fas fa-chevron-down"></i></button>
+            <div class="project-tech">
+              <span class="tech-tag">AWS Bedrock</span>
+              <span class="tech-tag">Multi-Agent</span>
+              <span class="tech-tag">RAG</span>
+              <span class="tech-tag">GraphQL</span>
+              <span class="tech-tag">LLM-as-Judge</span>
+            </div>
+          </div>
+
           <!-- Case 1 -->
           <div class="case-card animate-on-scroll">
             <div class="case-head">
@@ -550,8 +594,11 @@
               <h4>Applied AI &amp; Cloud</h4>
             </div>
             <div class="chip-row">
-              <span class="chip">Multi-Agent Systems</span>
+              <span class="chip core">Multi-Agent Systems</span>
+              <span class="chip core">AWS Bedrock</span>
+              <span class="chip">Agent Orchestration</span>
               <span class="chip">RAG</span>
+              <span class="chip">LLM-as-Judge</span>
               <span class="chip">AWS</span>
               <span class="chip">ETL / Data Lake</span>
               <span class="chip">System Design</span>
