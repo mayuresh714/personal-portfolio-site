@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Spy Chess — chess, but one of your pawns is a traitor</title>
+  <meta name="description" content="Classic Spy Chess: standard chess plus one hidden sleeper agent. Recruit an enemy pawn, mature it, and defect it. Play pass-and-play or vs the computer." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🕵️</text></svg>" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <header class="topbar">
+      <div class="brand">
+        <span class="brand-mark">🕵️</span>
+        <div>
+          <h1>Spy Chess</h1>
+          <p id="opponent-label" class="tagline">Chess, but one of your pawns is a traitor</p>
+        </div>
+      </div>
+      <a class="ghost-link" href="CONSTITUTION.md" target="_blank" rel="noopener">Rules</a>
+    </header>
+
+    <!-- ── MENU ─────────────────────────────────────────────── -->
+    <section id="screen-menu" class="screen">
+      <div class="hero">
+        <h2>Recruit a sleeper. Mature it. Defect it.</h2>
+        <p class="lead">Standard chess plus <b>one hidden allegiance</b>: before the game, you secretly turn one of your opponent's pawns into your agent. Keep it alive and it can defect into a Knight, Rook — even a Queen. Suspect a traitor in your own ranks? <b>Interrogate</b>.</p>
+        <div class="mode-cards">
+          <button id="mode-local" class="mode-card">
+            <span class="mc-icon">👥</span>
+            <span class="mc-title">Pass &amp; Play</span>
+            <span class="mc-sub">Two players, one device</span>
+          </button>
+          <button id="mode-ai" class="mode-card">
+            <span class="mc-icon">🤖</span>
+            <span class="mc-title">vs Computer</span>
+            <span class="mc-sub">Play a spy-aware engine</span>
+          </button>
+        </div>
+        <p class="fineprint">A defecting sleeper's power scales with how long it survives and how deep it sits — so an early reveal is just a pawn, and the enemy arms your agent every time they push it. <a href="CONSTITUTION.md" target="_blank" rel="noopener">Full rules →</a></p>
+      </div>
+    </section>
+
+    <!-- ── SETUP ────────────────────────────────────────────── -->
+    <section id="screen-setup" class="screen" hidden>
+      <div class="setup-head">
+        <h2 id="setup-title">Recruit your sleeper</h2>
+        <p id="setup-sub" class="lead"></p>
+      </div>
+      <!-- setup shares the #board element below via JS -->
+      <div class="board-wrap setup-board">
+        <div id="setup-board-slot"></div>
+      </div>
+    </section>
+
+    <!-- ── GAME ─────────────────────────────────────────────── -->
+    <section id="screen-game" class="screen" hidden>
+      <div class="game-grid">
+        <aside class="panel panel-left">
+          <div class="status-line" id="turn-indicator"></div>
+          <div class="movecount" id="movecount"></div>
+          <div class="captured-box">
+            <span class="cap-label">Captured</span>
+            <div class="cap-row" id="captured-black" aria-label="captured black pieces"></div>
+            <div class="cap-row" id="captured-white" aria-label="captured white pieces"></div>
+          </div>
+          <ul class="event-log" id="event-log"></ul>
+        </aside>
+
+        <div class="board-wrap">
+          <div id="board"></div>
+        </div>
+
+        <aside class="panel panel-right">
+          <button id="btn-reveal" class="action reveal">
+            <span class="a-title">🕶️ Reveal sleeper</span>
+            <span class="sub"></span>
+          </button>
+          <button id="btn-interrogate" class="action interrogate">
+            <span class="a-title">🔦 Interrogate</span>
+            <span class="sub"></span>
+          </button>
+          <div class="mini-actions">
+            <button id="btn-flip" class="mini">⇅ Flip</button>
+            <button data-new-game class="mini">↺ New game</button>
+          </div>
+          <div class="hint-card">
+            <p><b>Reveal</b> defects your agent — it must be move 8+, and it can't be captured yet.</p>
+            <p><b>Interrogate</b> a pawn you suspect is a traitor. Right → asset burned. Wrong → token wasted.</p>
+          </div>
+        </aside>
+      </div>
+    </section>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <!-- dialogs -->
+  <dialog id="dialog-promo" class="dialog">
+    <h3>Promote to…</h3>
+    <div id="promo-choices" class="choice-row"></div>
+  </dialog>
+
+  <dialog id="dialog-reveal" class="dialog">
+    <h3>Sleeper unmasked</h3>
+    <p id="reveal-info" class="dialog-sub"></p>
+    <div id="reveal-choices" class="choice-row big"></div>
+  </dialog>
+
+  <dialog id="dialog-handoff" class="dialog handoff">
+    <h3>Pass the device</h3>
+    <p class="dialog-sub">Hand it to <b id="handoff-name"></b>. Keep your pick secret.</p>
+    <button id="handoff-ok" class="action reveal"><span class="a-title">I'm ready</span></button>
+  </dialog>
+
+  <dialog id="dialog-over" class="dialog">
+    <h3 id="over-title"></h3>
+    <button data-new-game class="action reveal"><span class="a-title">Play again</span></button>
+  </dialog>
+
+  <script type="module" src="src/main.js"></script>
+</body>
+</html>
