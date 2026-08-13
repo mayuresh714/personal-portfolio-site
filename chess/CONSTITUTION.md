@@ -176,8 +176,38 @@ Standard, plus the spy layer folds in naturally:
 
 ---
 
-## 8. Roadmap beyond Classic (not in v1)
+## 8. Full Espionage mode
 
-**Full Espionage** — a spy *budget* to plant multiple sleepers across multiple piece
-types (a rook can be a sleeper, at higher cost/risk), with a richer detection meta.
-Classic Spy Chess must prove fun first; Full Espionage builds on this same core.
+Full Espionage builds on the same core and is now playable. It keeps everything
+above and adds four systems that make every step a read.
+
+**8.1 Budget & multiple sleepers.** Instead of one pawn, each side gets a **4-point
+budget** to plant several sleepers on *any* enemy non-king piece. Costs: pawn 1,
+knight/bishop 2, rook 3, queen 4. A sleeper hiding as a rook is powerful but eats
+most of your budget and hurts to lose.
+
+**8.2 Intel economy & scans (per-turn tension).** Each side starts with 2 **intel**
+and gains +1 per turn (cap 8). Spend it:
+- **Scan** (3 intel, free action — does not cost your turn): points at a small set of
+  your own pieces guaranteed to contain a hidden enemy sleeper, if any remain. It
+  narrows suspicion without naming the traitor.
+- Interrogation costs **1 intel** here instead of a fixed token.
+
+**8.3 Double agents (bluffs).** When an interrogation hits, you may pay **3 extra
+intel** to *turn* the unmasked sleeper into **your** double agent instead of merely
+neutralizing it — flipping the investment back on your opponent.
+
+**8.4 Reveal abilities.** A defecting sleeper is a set-piece. Beyond defecting, at
+maturity **M ≥ 3** it **freezes** an adjacent enemy piece for that side's next turn;
+at **M ≥ 5** it also grants a **bonus tempo** (you move again immediately). Non-pawn
+sleepers defect as their disguised type (a sleeper rook becomes *your* rook); pawn
+sleepers still upgrade by maturity as in Classic.
+
+Unlock is move **6** in Espionage (vs 8 in Classic) — there is more to do, sooner.
+
+## 9. Roadmap
+
+**Online play** via a shareable room link, with hidden picks held server-side (or
+committed cryptographically) so neither client can peek — the mode built for going
+viral. It needs a host that runs a server; GitHub Pages is static, so the online
+backend ships as a separate deployable package.
