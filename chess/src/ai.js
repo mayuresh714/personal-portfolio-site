@@ -3,7 +3,7 @@
 // a matured sleeper and occasionally interrogate on a hunch).
 
 import { legalMoves, applyMove, inCheck } from './engine.js';
-import { canReveal, reveal, maturity, canInterrogate, interrogate, makeMove, interrogable } from './spy.js';
+import { canReveal, reveal, maturityOf, canInterrogate, interrogate, makeMove, sleepersOf, allLegal } from './game.js';
 
 const VAL = { p: 100, n: 320, b: 330, r: 500, q: 900, k: 20000 };
 
@@ -68,27 +68,41 @@ export function bestMove(state, depth = 3) {
  * what it did, so the UI can narrate.
  */
 export function aiTurn(game, me, depth = 3) {
-  // 1) defect a matured sleeper when it is worth it (rook+ or delivers check)
-  const rv = canReveal(game, me);
-  if (rv.ok) {
-    const mat = maturity(game, me);
-    if (mat && mat.M >= 4) {
-      const res = reveal(game, me, 'n');
+  // 1) defect a matured sleeper when it is worth it (rook+ or an ability)
+  if (canReveal(game, me).ok) {
+    const spies = sleepersOf(game.state.board, me);
+    let best = null;
+    for (const s of spies) {
+      const mat = maturityOf(game, me, s.piece.id);
+      if (mat && (mat.M >= 4 || mat.ability.freeze)) { if (!best || mat.M > best.M) best = mat; }
+    }
+    if (best) {
+      const res = reveal(game, me, best.id, { pieceChoice: 'n' });
       if (res.ok) return 'ai-reveal';
     }
   }
-  // 2) rare interrogation hunch on the most-advanced own pawn
+  // 2) occasional interrogation hunch on one of the AI's own non-king pieces
   const iq = canInterrogate(game, me);
   if (iq.ok && Math.random() < 0.12) {
-    const pawns = interrogable(game, me);
-    if (pawns.length) {
-      const guess = pawns[Math.floor(Math.random() * pawns.length)];
-      interrogate(game, me, guess.r, guess.c);
+    const mine = ownPieces(game.state.board, me);
+    if (mine.length) {
+      const g = mine[Math.floor(Math.random() * mine.length)];
+      interrogate(game, me, g.r, g.c);
       return 'ai-interrogate';
     }
   }
-  // 3) otherwise, best normal move
-  const mv = bestMove(game.state, depth);
+  // 3) otherwise, best normal move — but never a frozen piece
+  let mv = bestMove(game.state, depth);
+  if (game.frozen && game.frozen.color === me && mv && game.state.board[mv.from.r][mv.from.c].id === game.frozen.id) {
+    const legal = allLegal(game);
+    mv = legal.sort((a, b) => (b.capture ? 1 : 0) - (a.capture ? 1 : 0))[0] || null;
+  }
   if (mv) { makeMove(game, mv); return 'ai-move'; }
   return 'ai-none';
+}
+
+function ownPieces(board, color) {
+  const out = [];
+  for (let r = 0; r < 8; r++) for (let c = 0; c < 8; c++) { const p = board[r][c]; if (p && p.color === color && p.type !== 'k') out.push({ r, c }); }
+  return out;
 }

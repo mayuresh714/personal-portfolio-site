@@ -15,14 +15,20 @@ export const key = (r, c) => `${r},${c}`;
 
 const BACK_RANK = ['r', 'n', 'b', 'q', 'k', 'b', 'n', 'r'];
 
+// Stable identity for pieces so the view can animate a piece across squares
+// instead of rebuilding the DOM. Preserved through cloneState (spread copy),
+// moves (same object slides), promotion and spy reveal (id reused on purpose).
+let _pieceId = 0;
+export const newId = () => `p${++_pieceId}`;
+
 /** Fresh standard starting position. */
 export function initialState() {
   const board = Array.from({ length: 8 }, () => Array(8).fill(null));
   for (let c = 0; c < 8; c++) {
-    board[0][c] = { type: BACK_RANK[c], color: BLACK };
-    board[1][c] = { type: 'p', color: BLACK };
-    board[6][c] = { type: 'p', color: WHITE };
-    board[7][c] = { type: BACK_RANK[c], color: WHITE };
+    board[0][c] = { type: BACK_RANK[c], color: BLACK, id: newId() };
+    board[1][c] = { type: 'p', color: BLACK, id: newId() };
+    board[6][c] = { type: 'p', color: WHITE, id: newId() };
+    board[7][c] = { type: BACK_RANK[c], color: WHITE, id: newId() };
   }
   return {
     board,
@@ -228,8 +234,8 @@ export function applyMove(state, move) {
   // en passant capture removes the pawn behind the target square
   if (move.ep) board[move.from.r][move.to.c] = null;
 
-  // promotion
-  if (move.promotion) board[move.to.r][move.to.c] = { type: move.promotion, color: mover };
+  // promotion — reuse the pawn's id so the view slides then swaps the glyph
+  if (move.promotion) board[move.to.r][move.to.c] = { type: move.promotion, color: mover, id: p.id };
 
   // castling: move the rook too
   if (move.castle) {

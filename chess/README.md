@@ -27,20 +27,22 @@ Modes: **Pass & Play** (two players, one device) and **vs Computer**.
 
 ## How it's built
 
-Vanilla ES modules, no framework:
+Two modes: **Classic** (one pawn sleeper each) and **Full Espionage** (a budget of
+sleepers on any piece, an intel economy, scans, double agents, and reveal
+abilities — freeze + bonus tempo). Vanilla ES modules, no framework:
 
 | File | Role |
 |------|------|
 | `src/engine.js` | Pure standard-chess rules (perft-verified through depth 4). No DOM. |
-| `src/spy.js` | Classic Spy Chess layered on the engine — recruit, mature, reveal, interrogate. |
+| `src/game.js` | The Spy Chess model — recruit, mature, reveal, interrogate, scan, double agents, freeze. Both modes. |
 | `src/ai.js` | Alpha-beta computer opponent, spy-aware. |
+| `src/board.js` | Flicker-free animated board view (persistent nodes, transform sliding, drag + click). |
 | `src/pieces.js` | Self-contained SVG piece set. |
-| `src/ui.js` | The board view (rendering + clicks). Knows no rules. |
+| `src/audio.js` | Synthesized WebAudio sound cues (no asset files). |
 | `src/main.js` | App orchestrator: menu → setup → game. |
 
 ## Roadmap
 
 - **Online play** via a shareable room link (server-adjudicated hidden info) — the
-  mode built for going viral.
-- **Full Espionage** — a spy *budget* to plant multiple sleepers across multiple
-  piece types, with a richer detection meta. See `CONSTITUTION.md` §8.
+  mode built for going viral. Needs a host that runs a server (GitHub Pages is
+  static); the code + deploy steps ship as a separate package.
